@@ -44,8 +44,11 @@ namespace GuessLibrary
             int Max = 100;
             int GuessedNumber = Generate.RandomNumber(Min, Max);
 
+            int repeatsNumber = 0;
+
             while (GuessedNumber != ChosenNumber)
             {
+                repeatsNumber++;
                 Console.WriteLine($"The computer has guessed the number {GuessedNumber}. Should the computer go (higher) or (lower)?");
                 Console.Write("Decision: ");
                 Decision = Console.ReadLine().ToLower();
@@ -78,7 +81,7 @@ namespace GuessLibrary
                 GuessedNumber = Generate.RandomNumber(Min, Max);
             }
 
-            Console.WriteLine($"The computer guessed the number ! The number the computer guessed is {GuessedNumber} !");
+            Console.WriteLine($"The computer guessed the number ! The number the computer guessed is {GuessedNumber} ! The number of repeats is {repeatsNumber}.");
         }
     }
 }

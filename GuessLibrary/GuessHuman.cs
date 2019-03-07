@@ -26,8 +26,12 @@ namespace GuessLibrary
                 goto Restart;
             }
 
+            int repeatsNumber = 0;
+
                 while (GuessedNumber != RandomNumber)
             {
+                repeatsNumber++;
+
                 if (GuessedNumber > RandomNumber)
                 {
                     Console.WriteLine("The number you have guessed is too high.");
@@ -62,7 +66,7 @@ namespace GuessLibrary
                 }
             }
 
-            Console.WriteLine($"You guessed the number ! The number was {RandomNumber} !");
+            Console.WriteLine($"You guessed the number ! The number was {RandomNumber} ! The number of repeat is {repeatsNumber}.");
         }
     }
 }
